@@ -1,27 +1,31 @@
 import Image from "next/image";
-
 import {
-  StyledTextContainer,
-  StyledContainer,
   StyledGetStartedBtn,
-  StyledTitle,
+  StyledContainer,
   StyledDescription,
-  StyledCTAContainer,
   StyledImageContainer,
+  StyledTextContainer,
+  StyledTitle,
 } from "./elements";
 
-export const Hero = ({ image, title, description, ctaText, ...props }) => {
+export const Hero = ({ image, title, description, ctaText, onStartClick }) => {
   return (
-    <StyledContainer {...props}>
+    <StyledContainer>
       <StyledTextContainer>
         <StyledTitle>{title}</StyledTitle>
         <StyledDescription>{description}</StyledDescription>
-        <StyledCTAContainer>
-          <StyledGetStartedBtn>{ctaText}</StyledGetStartedBtn>
-        </StyledCTAContainer>
+        <StyledGetStartedBtn onClick={onStartClick}>
+          {ctaText}
+        </StyledGetStartedBtn>
       </StyledTextContainer>
       <StyledImageContainer>
-        <Image src={image.src} alt={image.alt} width={image.width} height={image.height} priority />
+        <Image
+          src={image.src}
+          alt={image.alt}
+          width={image.width}
+          height={image.height}
+          priority
+        />
       </StyledImageContainer>
     </StyledContainer>
   );

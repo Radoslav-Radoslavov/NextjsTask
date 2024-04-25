@@ -1,3 +1,5 @@
+
+import { useState } from 'react';
 import { Hero } from "../sections";
 import { Main } from "../sections/Main/Main";
 
@@ -37,10 +39,18 @@ const mainProps = {
 };
 
 const Home = () => {
+  const [showMain, setShowMain] = useState(false);
+
+  const handleStartClick = () => {
+    setShowMain(true);
+  };
+
   return (
     <>
-      <Hero {...heroProps} />
-      <Main {...mainProps} />
+      <div>
+        {!showMain && <Hero {...heroProps} onStartClick={handleStartClick} />}
+        {showMain && <Main {...mainProps} />}
+      </div>
     </>
   );
 }
