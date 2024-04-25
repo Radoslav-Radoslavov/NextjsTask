@@ -24,7 +24,7 @@ export const Card = ({ card }) => {
   return (
     <CardContainer>
       <ImageContainer>
-      <Image layout="responsive" src={image.src} alt={title} width={image.width} height={image.height} />
+      <Image src={image.src} alt={title} width={image.width} height={image.height} />
       </ImageContainer>
       <CardInfoContainer>
         <CardInnerHeading>{title}</CardInnerHeading>
