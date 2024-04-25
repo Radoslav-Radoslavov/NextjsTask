@@ -7,6 +7,8 @@ const heroProps = {
   ctaText: "Start",
 };
 
+const mainProps = {};
+
 export default function Home() {
   return (
     <>
