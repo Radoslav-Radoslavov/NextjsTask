@@ -1,4 +1,5 @@
 import Image from "next/image";
+import React from "react";
 import {
   StyledGetStartedBtn,
   StyledContainer,
@@ -8,7 +9,20 @@ import {
   StyledTitle,
 } from "./elements";
 
-export const Hero = ({ image, title, description, ctaText, onStartClick }) => {
+interface HeroProps {
+  image: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+  };
+  title: string;
+  description: string;
+  ctaText: string;
+  onStartClick: () => void;
+}
+
+export const Hero: React.FC<HeroProps> = ({ image, title, description, ctaText, onStartClick }) => {
   return (
     <StyledContainer>
       <StyledTextContainer>

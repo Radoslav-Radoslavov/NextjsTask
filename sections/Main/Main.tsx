@@ -1,3 +1,4 @@
+import React from "react";
 import Image from "next/image";
 import {
   MainContainer,
@@ -8,9 +9,30 @@ import {
   ImageWrapper,
 } from "./elements";
 import { Card } from "../../collections/Card/Card";
-export const Main = (props) => {
-  const { image, cardsData } = props;
 
+
+interface CardData {
+  id: number;
+  image: {
+    src: string;
+    width: number;
+    height: number;
+  };
+  title: string;
+  description: string;
+}
+
+interface MainProps {
+  image: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+  };
+  cardsData: CardData[];
+}
+
+export const Main: React.FC<MainProps> = ({ image, cardsData }) => {
   return (
     <MainContainer>
       <Heading>Managed agency selection</Heading>
