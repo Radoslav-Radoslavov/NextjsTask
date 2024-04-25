@@ -1,5 +1,4 @@
 import Image from "next/image";
-
 import {
   CardContainer,
   CardInfoContainer,
@@ -7,9 +6,6 @@ import {
   CardInnerText,
   ImageContainer,
 } from "./elements";
-
-import Image from 'next/image'
-import { CardContainer, CardInfoContainer, CardInnerHeading, CardInnerText, ImageContainer } from "./elements"
 
 export const Card = ({ card }) => {
   const { image, title, description } = card;
