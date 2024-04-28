@@ -23,16 +23,7 @@ interface CardProps {
 export const Card: React.FC<CardProps> = ({ card }) => {
   const { image, title, description } = card;
 
-  const parseDescription = (description: string): JSX.Element[] => {
-    const parts = description.split(/(<b>.*?<\/b>)/g);
-    return parts.map((part, index) => {
-      if (part.startsWith("<b>") && part.endsWith("</b>")) {
-        return <b key={index}>{part.slice(3, -4)}</b>;
-      } else {
-        return <span key={index}>{part}</span>;
-      }
-    });
-  };
+
 
   return (
     <CardContainer>
@@ -41,7 +32,7 @@ export const Card: React.FC<CardProps> = ({ card }) => {
       </ImageContainer>
       <CardInfoContainer>
         <CardInnerHeading>{title}</CardInnerHeading>
-        <CardInnerText>{parseDescription(description)}</CardInnerText>
+        <CardInnerText dangerouslySetInnerHTML={{ __html: description }} />
       </CardInfoContainer>
     </CardContainer>
   );
