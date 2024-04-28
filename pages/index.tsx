@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Hero } from "../sections";
 import { Main } from "../sections/Main/Main";
+import React from 'react';
 
 interface HeroProps {
   image: {
