@@ -37,4 +37,10 @@ export const StyledImageContainer = styled(({ ...props }) => <div {...props} />)
   width: 100%;
   height: 100%;
   margin-left: auto;
+
+ 
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+    margin-left: 250px;
+  }
 `;
