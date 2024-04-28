@@ -6,7 +6,7 @@
       "esnext"
     ],
     "allowJs": true,
-    "skipLibCheck": true, 
+    "skipLibCheck": true,
     "strict": false,
     "noEmit": false,
     "incremental": true,
@@ -25,7 +25,8 @@
       "@pages/*": [
         "pages/*"
       ]
-    }
+    },
+    "forceConsistentCasingInFileNames": true
   },
   "include": [
     "next-env.d.ts",
